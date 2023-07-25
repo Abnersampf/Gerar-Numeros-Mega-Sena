@@ -1,6 +1,6 @@
 class Program
 {
-    // qtd = quantidade de números aleatórios qur você quer gerar;
+    // qtd = quantidade de números aleatórios que você quer gerar;
     // max = valor máximo que esses números podem ser;
     // min = valor mínimo que esses números podem ser.
     static int qtd = 6, max = 60, min = 1;
