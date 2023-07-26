@@ -9,32 +9,28 @@ class Program
         int aleatorio;
         int[] numeros = new int[qtd];
         Random random = new Random();
-        bool sair = true;
 
         // Gera os números aleatórios (sem que haja repetição entre eles);
         // OBS: Caso você queira números repetidos, retire o loop while.
-        while (sair)
+        for (int c = 0; c < numeros.Length; c++)
         {
-            for (int c = 0; c < numeros.Length; c++)
+            aleatorio = random.Next(min, max + 1);
+            while (contem(aleatorio, numeros))
             {
                 aleatorio = random.Next(min, max + 1);
-                while (contem(aleatorio, numeros))
-                {
-                    aleatorio = random.Next(min, max + 1);
-                }
-                numeros[c] = aleatorio;
             }
-
-            // Ordena os números dentro do vetor em ordem crescente.
-            ordenar(numeros);
-
-            // Apresenta os números na tela
-            foreach (int n in numeros)
-            {
-                Console.Write(n + " ");
-            }
-            Console.WriteLine();
+            numeros[c] = aleatorio;
         }
+
+        // Ordena os números dentro do vetor em ordem crescente.
+        ordenar(numeros);
+
+        // Apresenta os números na tela
+        foreach (int n in numeros)
+        {
+            Console.Write(n + " ");
+        }
+        Console.WriteLine();
     }
     // Função que verifica se o número já existe dentro do vetor.
     static bool contem(int n, int[] vetor)
